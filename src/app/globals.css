@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f3f0e8;
+  --ink: #151515;
+  --muted: #605f59;
+  --lime: #c8ff36;
+  --coral: #ff6b57;
+  --lavender: #b8a3ff;
+  --teal: #32e3cf;
+  --line: #151515;
+  --panel: #fffdf6;
+  --shadow: 8px 8px 0 #151515;
+  --shadow-small: 4px 4px 0 #151515;
+}
+
+.theme-dark {
+  --paper: #151515;
+  --ink: #f3f0e8;
+  --muted: #bab8af;
+  --line: #f3f0e8;
+  --panel: #20201e;
+  --shadow: 8px 8px 0 #c8ff36;
+  --shadow-small: 4px 4px 0 #c8ff36;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  overflow-x: hidden;
+}
+
+.grid-surface {
+  background-image: linear-gradient(to right, rgba(21, 21, 21, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(21, 21, 21, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.theme-dark .grid-surface {
+  background-image: linear-gradient(to right, rgba(243, 240, 232, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(243, 240, 232, 0.08) 1px, transparent 1px);
+}
+
+.hard-card {
+  border: 2px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.hard-card-small {
+  border: 2px solid var(--line);
+  box-shadow: var(--shadow-small);
+}
+
+.focus-ring:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 4px;
+}
+
+.neon-orb {
+  filter: blur(1px);
+}
+
+@keyframes floatOrb {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -12px, 0) rotate(5deg);
+  }
+}
+
+.neon-orb {
+  animation: floatOrb 6s ease-in-out infinite;
+}
+
+.neon-orb:nth-child(2) {
+  animation-delay: -2s;
+}
+
+.neon-orb:nth-child(3) {
+  animation-delay: -4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
