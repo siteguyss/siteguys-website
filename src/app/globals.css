@@ -19,14 +19,68 @@
   --ink: #f3f0e8;
   --muted: #bab8af;
   --line: #f3f0e8;
+  --lime: #a1d809;
   --panel: #20201e;
   --shadow: 8px 8px 0 #c8ff36;
   --shadow-small: 4px 4px 0 #c8ff36;
 }
 
+.text-muted {
+  color: var(--muted);
+}
+
+.text-ink {
+  color: var(--ink);
+}
+
+.text-lime {
+  color: var(--lime);
+}
+
+.text-coral {
+  color: var(--coral);
+}
+
+.text-lavender {
+  color: var(--lavender);
+}
+
+.text-teal {
+  color: var(--teal);
+}
+
+.bg-paper {
+  background-color: var(--paper);
+}
+
+.bg-panel {
+  background-color: var(--panel);
+}
+
+.bg-lime {
+  background-color: var(--lime);
+}
+
+.bg-coral {
+  background-color: var(--coral);
+}
+
+.bg-lavender {
+  background-color: var(--lavender);
+}
+
+.bg-teal {
+  background-color: var(--teal);
+}
+
+.border-line {
+  border-color: var(--line);
+}
+
 html {
   scroll-behavior: smooth;
 }
+
 
 body {
   background-color: var(--paper);
