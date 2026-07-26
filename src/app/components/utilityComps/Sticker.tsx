@@ -7,7 +7,7 @@ type StickerProps = {
   label: string;
   color: string;
   rotate: number;
-  dragConstraintsRef: React.RefObject<HTMLDivElement>;
+  dragConstraintsRef: React.RefObject<HTMLDivElement | null>;
 };
 
 export function Sticker({ label, color, rotate, dragConstraintsRef }: StickerProps) {
