@@ -2,7 +2,13 @@
 // Swap every value here with your own copy — no component files need to change.
 
 export const nav = {
-  logo: "siteguys",
+  logo: "/logo_svgs/siteguys_nameLogo.svg",
+  logo2: "/logo_svgs/logoNameWhite.svg",
+  logohov1: "/logo_svgs/logoNameviolet.svg",
+  logohov2: "/logo_svgs/logoNamePeach.svg",
+  logohov3: "/logo_svgs/logoNameLime.svg",
+  logohov4: "/logo_svgs/logoNameTeal.svg",
+
   links: [
     { label: "Work", href: "#work" },
     { label: "Services", href: "#services" },
@@ -13,15 +19,16 @@ export const nav = {
 };
 
 export const hero = {
-  kicker: "Independent digital studio · Dubai / Worldwide",
-  title: "Siteguys make the web hit different.",
-  copy: "Premium web design and development engineered for serious speed, sharp positioning, and more conversions.",
+  kicker: "Independent digital studio · Denmark / Worldwide",
+  title: "Websites that actually",
+  title2: "grow your business",
+  copy: "Premium web design and development built for speed, clear messaging, and more sales.",
   primaryCta: { label: "Start a Project", href: "#mail" },
   secondaryCta: { label: "See the Work", href: "#work" },
   trust: [
-    { value: "1", label: "Shipped projects" },
-    { value: "1", label: "Years operating" },
-    { value: "4.9/5", label: "Average client rating" },
+    { value: "FAST", label: "Turnaround" },
+    { value: "TAILORED", label: "CODE" },
+    { value: "DIRECT", label: "COLLABORATION" },
   ],
 };
 

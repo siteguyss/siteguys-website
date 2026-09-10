@@ -5,8 +5,11 @@ import type { MouseEvent } from "react";
 import { SectionEyebrow } from "./utilityComps/SectionEyebrow";
 import { Button } from "./utilityComps/Button";
 import { hero } from "../lib/content";
+import { useTheme } from "./ThemeProvider";
 
 const HeroSection = () => {
+  const { isDark, toggleTheme } = useTheme();
+
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const springX = useSpring(x, { stiffness: 200, damping: 20 });
@@ -34,15 +37,14 @@ const HeroSection = () => {
       <div className="mx-auto grid   max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}>
           <SectionEyebrow>{hero.kicker}</SectionEyebrow>
-          <h1 className="mt-4 max-w-xl text-4xl font-extrabold leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl">{hero.title}</h1>
+          <h1 className="mt-4 font-chillax text-4xl font-extrabold leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl">
+            {hero.title} <span className="text-(--lime)">{hero.title2}</span>
+          </h1>
           <p className="mt-6 max-w-md text-lg font-medium leading-relaxed text-muted">{hero.copy}</p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button href={hero.primaryCta.href} background="var(--lime)">
+            <Button href={hero.primaryCta.href} background="var(--lime)" textColor={isDark ? `var(--paper)` : `var(--ink)`}>
               {hero.primaryCta.label}
-            </Button>
-            <Button href={hero.secondaryCta.href} background="var(--panel)">
-              {hero.secondaryCta.label}
             </Button>
           </div>
 
@@ -51,14 +53,14 @@ const HeroSection = () => {
               <div key={stat.label}>
                 <dt className="sr-only">{stat.label}</dt>
                 <dd className="text-xl font-bold">{stat.value}</dd>
-                <dd className="font-mono text-xs uppercase text-muted">{stat.label}</dd>
+                <dd className="font-synonym text-xs uppercase text-muted">{stat.label}</dd>
               </div>
             ))}
           </dl>
         </motion.div>
 
-        <motion.div onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} style={{ rotateX, rotateY, transformPerspective: 900 }} className="hard-card row-start-1 md:col-start-2 relative aspect-square w-full max-w-md justify-self-center rounded-none p-8">
-          <p className="absolute bottom-8 left-8 right-8 font-mono text-xs uppercase text-muted">Strategy · Design · Engineering</p>
+        <motion.div onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} style={{ rotateX, rotateY, transformPerspective: 900 }} className="hard-card reactCard row-start-1  md:col-start-2 relative aspect-square w-full max-w-md justify-self-center rounded-none p-8">
+          <p className="absolute bottom-3 left-8 right-8 font-synonym text-xs uppercase">Strategy · Design · Engineering</p>
         </motion.div>
       </div>
     </section>

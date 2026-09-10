@@ -15,7 +15,7 @@ export function StickerPlayground() {
       <div className="mx-auto max-w-7xl">
         <div className="flex items-center justify-between">
           <span>
-            <SectionEyebrow>02 / Creative system</SectionEyebrow>
+            <SectionEyebrow>02 / Interactive systems</SectionEyebrow>
             <h2 className="mt-4 max-w-2xl text-3xl font-extrabold tracking-tight sm:text-4xl">Good websites have a little physics.</h2>
           </span>
           <motion.button type="button" onClick={() => setResetKey((k) => k + 1)} className="hard-card-small focus-ring px-3 py-2 font-mono text-xs font-bold uppercase" style={{ background: "var(--panel)" }} whileTap={{ scale: 0.94 }}>

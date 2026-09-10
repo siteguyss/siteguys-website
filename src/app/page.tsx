@@ -15,7 +15,6 @@ export default function Home() {
       <main>
         <HeroSection />
         <StickerPlayground />
-        <CaseStudies />
         <Services />
         <Process />
         <Testimonials />

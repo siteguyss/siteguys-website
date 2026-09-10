@@ -17,6 +17,7 @@
 .theme-dark {
   --paper: #151515;
   --ink: #f3f0e8;
+  --limeink: #151515;
   --muted: #bab8af;
   --line: #f3f0e8;
   --lime: #a1d809;
@@ -77,10 +78,43 @@
   border-color: var(--line);
 }
 
+@theme {
+  --font-synonym: "Synonym", sans-serif;
+  --font-chillax: "Chillax", sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-chillax);
+  font-weight: 600;
+}
+
+h1 {
+  font-weight: 700;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+p {
+  font-family: var(--font-synonym);
+  font-weight: 400;
+  line-height: 1.6;
+}
+a{
+  font-family: var(--font-synonym);
+}
 
 body {
   background-color: var(--paper);
@@ -91,8 +125,15 @@ body {
   overflow-x: hidden;
 }
 
+.reactCard {
+  background-image: url(../../public/images/sgpicture.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .grid-surface {
-  background-image: linear-gradient(to right, rgba(21, 21, 21, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(21, 21, 21, 0.08) 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgba(23, 155, 178, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(21, 21, 21, 0.08) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 

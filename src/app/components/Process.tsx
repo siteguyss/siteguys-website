@@ -10,7 +10,7 @@ export function Process() {
   return (
     <section id="process" className="px-4 py-16 sm:px-6 sm:py-24 lg:px-8 grid-surface">
       <div className="mx-auto max-w-7xl">
-        <SectionEyebrow>05 / The build</SectionEyebrow>
+        <SectionEyebrow>04 / The build</SectionEyebrow>
         <h2 className="mt-4 max-w-2xl text-3xl font-extrabold tracking-tight sm:text-4xl">Clear steps. No mystery.</h2>
 
         <ol className="mt-10 grid grid-cols-2 md:gap-5  sm:grid-cols-2 lg:grid-cols-4">
