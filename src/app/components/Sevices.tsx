@@ -12,7 +12,7 @@ export function Services() {
     <section id="services" className="px-4 py-16 sm:px-6 sm:py-24 lg:px-8 grid-surface">
       <div className="mx-auto max-w-7xl">
         <SectionEyebrow>03 / Capabilities</SectionEyebrow>
-        <h2 className="mt-4 max-w-2xl text-3xl font-extrabold tracking-tight sm:text-4xl">Small studio. Full-stack impact.</h2>
+        <h2 className="mt-4 max-w-2xl text-3xl font-extrabold tracking-tight sm:text-4xl">Full-scale impact.</h2>
 
         <div className="mt-10 w-full grid gap-5 sm:grid-cols-2 lg:grid-cols-3 md:h-40">
           {services.map((service, i) => (

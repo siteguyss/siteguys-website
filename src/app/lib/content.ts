@@ -10,7 +10,7 @@ export const nav = {
   logohov4: "/logo_svgs/logoNameTeal.svg",
 
   links: [
-    { label: "Work", href: "#work" },
+    { label: "Packages", href: "#packages" },
     { label: "Services", href: "#services" },
     { label: "Process", href: "#process" },
     { label: "Contact", href: "#contact" },

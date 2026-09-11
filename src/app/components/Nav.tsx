@@ -42,10 +42,10 @@ export function Nav() {
         boxShadow: scrolled ? "0 8px 0 -4px var(--line)" : "none",
       }}
     >
-      <nav className="mx-auto gap-10 flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8 hover:">
-        <a href="#" className="text-xl font-extrabold tracking-tight hover:scale-105 transition-hover duration-200 ">
+      <nav className="mx-auto gap-10 flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8 hover:">
+        <a href="#" className="tracking-tight hover:scale-105 transition-hover duration-200 ">
           <div
-            className="relative h-8 w-fit"
+            className="relative h-8 w-fit my-auto"
             onMouseEnter={() => {
               handleHover();
               setIsHovering(true);
@@ -53,16 +53,16 @@ export function Nav() {
             onMouseLeave={() => setIsHovering(false)}
           >
             {/* Normal logo */}
-            <img src={isDark ? nav.logo2 : nav.logo} alt="SiteGuys" className={`h-8 w-auto transition-opacity duration-200 ${isHovering ? "opacity-0" : "opacity-100"}`} />
+            <img src={isDark ? nav.logo2 : nav.logo} alt="SiteGuys" className={`h-6 w-auto transition-opacity duration-200 ${isHovering ? "opacity-0" : "opacity-100"}`} />
 
             {/* Hover logo */}
-            <img src={hoverLogos[hoverColor]} alt="SiteGuys" className={`absolute inset-0 h-8 w-auto transition-opacity duration-200 ${isHovering ? "opacity-100" : "opacity-0"}`} />
+            <img src={hoverLogos[hoverColor]} alt="SiteGuys" className={`absolute inset-0 h-6 w-auto transition-opacity duration-200 ${isHovering ? "opacity-100" : "opacity-0"}`} />
           </div>
         </a>
 
-        <div className="hidden items-center gap-6 font-mono text-xs font-bold uppercase md:flex">
+        <div className="hidden items-center gap-6 font-mono! text-xs  font-bold uppercase md:flex">
           {nav.links.map((link) => (
-            <a key={link.href} href={link.href} className="focus-ring hover:underline">
+            <a key={link.href} href={link.href} className="focus-ring font-mono! hover:underline">
               {link.label}
             </a>
           ))}

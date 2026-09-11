@@ -112,9 +112,11 @@ p {
   font-weight: 400;
   line-height: 1.6;
 }
-a{
+a {
   font-family: var(--font-synonym);
 }
+
+
 
 body {
   background-color: var(--paper);

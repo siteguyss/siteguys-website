@@ -7,6 +7,7 @@ import { Services } from "./components/Sevices";
 import { Process } from "./components/Process";
 import { Testimonials } from "./components/Testimonials";
 import { FinalCTA } from "./components/FinalCta";
+import PackagesSection from "./components/PackagesSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <HeroSection />
         <StickerPlayground />
         <Services />
+        <PackagesSection />
         <Process />
         <Testimonials />
         <FinalCTA />
