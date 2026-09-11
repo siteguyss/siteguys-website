@@ -34,11 +34,11 @@ const HeroSection = () => {
       <div className="neon-orb absolute right-10 top-20 h-30 w-30 opacity-50" style={{ background: "var(--lavender)" }} />
       <div className="neon-orb absolute bottom-10 left-[50%] h-25 w-25 opacity-50 rounded-full" style={{ background: "var(--teal)" }} />
 
-      <div className="mx-auto grid   max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
-        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}>
+      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
+        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }} className="">
           <SectionEyebrow>{hero.kicker}</SectionEyebrow>
           <h1 className="mt-4 font-chillax text-4xl font-extrabold leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl">
-            {hero.title} <span className="text-(--lime)">{hero.title2}</span>
+            {hero.title} <span className={`${isDark ? "text-(--lime)" : "text-(--lavender)"}`}>{hero.title2}</span>
           </h1>
           <p className="mt-6 max-w-md text-lg font-medium leading-relaxed text-muted">{hero.copy}</p>
 
@@ -59,7 +59,7 @@ const HeroSection = () => {
           </dl>
         </motion.div>
 
-        <motion.div onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} style={{ rotateX, rotateY, transformPerspective: 900 }} className="hard-card reactCard row-start-1  md:col-start-2 relative aspect-square w-full max-w-md justify-self-center rounded-none p-8">
+        <motion.div onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} style={{ rotateX, rotateY, transformPerspective: 900 }} className="hard-card reactCard md:row-start-1  md:col-start-2 relative aspect-square w-full max-w-md justify-self-center rounded-none p-8">
           <p className="absolute bottom-3 left-8 right-8 font-synonym text-xs uppercase">Strategy · Design · Engineering</p>
         </motion.div>
       </div>

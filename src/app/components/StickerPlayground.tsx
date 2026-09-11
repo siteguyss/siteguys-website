@@ -3,12 +3,15 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Sticker } from "./utilityComps/Sticker";
+import { useTheme } from "./ThemeProvider";
 import { SectionEyebrow } from "./utilityComps/SectionEyebrow";
 import { stickers } from "../lib/content";
 
 export function StickerPlayground() {
   const zoneRef = useRef<HTMLDivElement>(null);
   const [resetKey, setResetKey] = useState(0);
+
+  const { isDark, toggleTheme } = useTheme();
 
   return (
     <section className="px-4 py-16 sm:px-6 sm:py-24 lg:px-8 grid-surface">
@@ -23,7 +26,7 @@ export function StickerPlayground() {
           </motion.button>
         </div>
 
-        <div ref={zoneRef} className="hard-card bg-(--paper) relative mt-6 h-72 z-0 w-full overflow-hidden sm:h-80">
+        <div ref={zoneRef} className={`hard-card relative mt-6 h-72 z-0 w-full overflow-hidden sm:h-80 ${!isDark ? "bg-white" : "bg-(--paper)"}`}>
           {stickers.map((sticker) => (
             <div key={`${sticker.id}-${resetKey}`} style={{ position: "absolute", left: sticker.x, top: sticker.y }}>
               <Sticker label={sticker.label} color={sticker.color} rotate={sticker.rotate} dragConstraintsRef={zoneRef} />
