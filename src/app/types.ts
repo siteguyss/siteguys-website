@@ -34,3 +34,31 @@ export interface PlanTier {
   includedFeatures: string[];
   supportIncludes: string[];
 }
+
+
+export interface ProjectInquiry {
+  referenceId: string;
+  clientName: string;
+  clientEmail: string;
+  companyName: string;
+  currentWebsite: string;
+  planId: string;
+  timeline: string;
+  selectedServices: string[];
+  projectDetails: string;
+  acknowledgedContract: boolean;
+  submittedAt: string;
+  totalUpfront: number;
+  monthlyFee: number;
+  totalCommitment: number;
+}
+
+export interface DispatchedEmail {
+  id: string;
+  recipient: string;
+  recipientType: "customer" | "studio";
+  subject: string;
+  sentAt: string;
+  previewText: string;
+  htmlBody: string;
+}
