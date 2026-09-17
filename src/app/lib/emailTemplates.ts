@@ -20,7 +20,7 @@
 import type { ProjectInquiry, DispatchedEmail, PlanTier } from "../types";
 
 // TODO: confirm this is the correct inbox for studio-side alerts.
-const STUDIO_EMAIL = "hello@siteguysstudio.com";
+const STUDIO_EMAIL = "info@siteguys.dk";
 
 function formatKr(n: number) {
   return `${n.toLocaleString("en-US")} kr.`;
@@ -36,7 +36,7 @@ export function buildCustomerConfirmationEmail(inquiry: ProjectInquiry, plan: Pl
       <ul>
         <li>Upfront build fee: ${formatKr(inquiry.totalUpfront)}</li>
         <li>Monthly support fee: ${formatKr(inquiry.monthlyFee)}/mo for ${plan.supportCommitmentMonths} months</li>
-        <li>Total 6-month commitment: ${formatKr(inquiry.totalCommitment)}</li>
+        <li>Total 3-month commitment: ${formatKr(inquiry.totalCommitment)}</li>
         <li>Timeline: ${inquiry.timeline}</li>
         ${inquiry.selectedServices.length ? `<li>Add-ons: ${inquiry.selectedServices.join(", ")}</li>` : ""}
       </ul>
