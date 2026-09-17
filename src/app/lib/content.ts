@@ -10,12 +10,12 @@ export const nav = {
   logohov4: "/logo_svgs/logoNameTeal.svg",
 
   links: [
-    { label: "Packages", href: "#packages" },
-    { label: "Services", href: "#services" },
     { label: "Process", href: "#process" },
+    { label: "Packages", href: "#packages" },
     { label: "Contact", href: "#contact" },
+    { label: "FAQ", href: "#faq" },
   ],
-  cta: { label: "Start ->", href: "mailto:hello@siteguysstudio" },
+  cta: { label: "Start ->", href: "#contact" },
 };
 
 export const hero = {
@@ -23,11 +23,11 @@ export const hero = {
   title: "Websites that actually",
   title2: "grow your business",
   copy: "Premium web design and development built for speed, clear messaging, and more sales.",
-  primaryCta: { label: "Start a Project", href: "#mail" },
+  primaryCta: { label: "Start a Project", href: "#contact" },
   secondaryCta: { label: "See the Work", href: "#work" },
   trust: [
-    { value: "FAST", label: "Turnaround" },
     { value: "TAILORED", label: "CODE" },
+    { value: "FAST", label: "TURNAROUND" },
     { value: "DIRECT", label: "COLLABORATION" },
   ],
 };
@@ -147,16 +147,15 @@ export const finalCta = {
   kicker: "Your next version starts here",
   title: "Let's build the site your business has already outgrown its current one for.",
   copy: "Tell us what's changing, what's stuck, and where you want to go. We'll reply with a clear next step.",
-  primaryCta: { label: "Start a Project", href: "mailto:hello@siteguysstudio" },
-  secondaryCta: { label: "See the Work", href: "#work" },
+  primaryCta: { label: "Start a Project", href: "#contact" },
+  secondaryCta: { label: "See the Work", href: "mailto:info@siteguys" },
 };
 
 export const footer = {
   logo: "siteguys",
   copy: "Design and development for small teams shipping real products. Remote-first, worldwide.",
   links: [
-    { label: "Work", href: "#work" },
-    { label: "Services", href: "#services" },
-    { label: "hello@fieldwork.studio", href: "mailto:hello@fieldwork.studio" },
+    { label: "+45 25941919", href: "tel:+4525941919" },
+    { label: "info@siteguys.dk", href: "mailto:info@siteguys.dk?subject=Project%20inquiry" },
   ],
 };

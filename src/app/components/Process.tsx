@@ -10,8 +10,9 @@ export function Process() {
   return (
     <section id="process" className="px-4 py-16 sm:px-6 sm:py-24 lg:px-8 grid-surface">
       <div className="mx-auto max-w-7xl">
-        <SectionEyebrow>04 / The build</SectionEyebrow>
-        <h2 className="mt-4 max-w-2xl text-3xl font-extrabold tracking-tight sm:text-4xl">Clear steps. No mystery.</h2>
+        <SectionEyebrow>02 / Process</SectionEyebrow>
+        <h2 className="mt-4 max-w-2xl text-3xl font-extrabold tracking-tight sm:text-4xl">Our process</h2>
+        <p className="mt-2">At siteguys we have formulated a method that gurantees a well recieved website, 100% of the time</p>
 
         <ol className="mt-10 grid grid-cols-2 md:gap-5  sm:grid-cols-2 lg:grid-cols-4">
           {process.map((item, i) => (

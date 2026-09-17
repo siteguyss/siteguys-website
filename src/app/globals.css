@@ -116,8 +116,6 @@ a {
   font-family: var(--font-synonym);
 }
 
-
-
 body {
   background-color: var(--paper);
   color: var(--ink);
@@ -159,7 +157,8 @@ body {
 }
 
 .neon-orb {
-  filter: blur(1px);
+  background-position: center;
+  background-size: contain;
 }
 
 @keyframes floatOrb {

@@ -8,7 +8,7 @@ type PCardProps = {
 export default function PackageCard({ plan }: PCardProps) {
   return (
     <div id={plan.id} className="relative flex max-w-[450px] flex-col border-[3px] bg-panel transition-all hard-card">
-      {plan.popular && <div className="absolute -top-3.5 right-6 z-10 bg-lime px-3 py-1 text-xs font-black uppercase tracking-wider text-ink shadow-[2px_2px_0px_var(--line)]">Recommended</div>}
+      {plan.popular && <div className="absolute -top-3.5 right-6 z-10 bg-lime px-6 py-2 text-xl font-black uppercase tracking-wider text-ink shadow-[2px_2px_0px_var(--line)]">Most Popular</div>}
 
       {/* Card Header: Upfront Build Fee & Delivery */}
       <div className="relative border-b-2 border-line p-6" style={{ backgroundColor: `var(--${plan.bgHighlightColor})` }}>
@@ -38,8 +38,27 @@ export default function PackageCard({ plan }: PCardProps) {
 
       {/* Card Body */}
       <div className="p-6 flex-1 flex flex-col justify-between space-y-6">
-        {/* Combined Feature Comparison Matrix (All necessary info visible, lacking items greyed out) */}
-        <div className="space-y-3">
+        {/* Mobile disclosure keeps the dense comparison out of the way until needed. */}
+        <details className="border-y-2 border-line md:hidden">
+          <summary className="cursor-pointer list-none py-3 font-mono text-[11px] font-black uppercase tracking-wider text-ink">
+            Deliverables & Comparison <span aria-hidden="true">+</span>
+          </summary>
+          <ul className="space-y-1.5 pb-4">
+            {plan.features?.map((feature) => (
+              <li key={feature.id} className={`flex gap-2 text-sm ${feature.included ? "text-ink" : "text-muted"}`}>
+                <span aria-hidden="true">{feature.included ? "✓" : "—"}</span>
+                <span>
+                  {feature.name}
+                  {feature.badge && <span className="ml-1 font-mono text-[10px] uppercase">({feature.badge})</span>}
+                  {!feature.included && feature.unavailableNote && <span className="ml-1 text-xs">[{feature.unavailableNote}]</span>}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </details>
+
+        {/* Desktop comparison matrix remains visible for quick scanning. */}
+        <div className="hidden space-y-3 md:block">
           <div className="flex items-center justify-between border-b-2 border-line pb-2">
             <div className="flex items-center gap-1.5 font-mono text-[11px] font-black uppercase tracking-wider text-ink">
               <span>Deliverables & Comparison:</span>
@@ -62,7 +81,7 @@ export default function PackageCard({ plan }: PCardProps) {
         </div>
 
         {/* 6-Month Obligatory Support block */}
-        <div className="border-2 border-line bg-panel p-3.5 shadow-[3px_3px_0px_var(--line)]">
+        {/* <div className="border-2 border-line bg-panel p-3.5 shadow-[3px_3px_0px_var(--line)]">
           <div className="flex items-baseline justify-between mb-1">
             <div className="flex items-center gap-1.5">
               <span className="h-2.5 w-2.5 rounded-full border border-line" />
@@ -76,12 +95,12 @@ export default function PackageCard({ plan }: PCardProps) {
           <p className="text-[11px] leading-relaxed text-muted">
             Activates upon launch for {plan.supportCommitmentMonths} months: {plan.supportIncludes.join(", ")}.
           </p>
-        </div>
+        </div> */}
 
         {/* Bottom: Action CTA Button */}
         <div className="space-y-3 pt-2">
           {/* Action Button: Leads to Formular */}
-          <Button href="#contact" background={`var(--${plan.bgHighlightColor})`} textColor="var(--ink)">
+          <Button href={`/?plan=${encodeURIComponent(plan.id)}#contact`} background={`var(--${plan.bgHighlightColor})`} textColor="var(--ink)">
             {plan.buttonLabel}
           </Button>
           <div className="text-center font-mono text-[10px] text-muted">Pre-fills intake formular below • Instant confirmation</div>

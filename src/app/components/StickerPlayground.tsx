@@ -6,6 +6,7 @@ import { Sticker } from "./utilityComps/Sticker";
 import { useTheme } from "./ThemeProvider";
 import { SectionEyebrow } from "./utilityComps/SectionEyebrow";
 import { stickers } from "../lib/content";
+import { Button } from "./utilityComps/Button";
 
 export function StickerPlayground() {
   const zoneRef = useRef<HTMLDivElement>(null);
@@ -21,9 +22,12 @@ export function StickerPlayground() {
             <SectionEyebrow>02 / Interactive systems</SectionEyebrow>
             <h2 className="mt-4 max-w-2xl text-3xl font-extrabold tracking-tight sm:text-4xl">Good websites have a little physics.</h2>
           </span>
-          <motion.button type="button" onClick={() => setResetKey((k) => k + 1)} className="hard-card-small focus-ring px-3 py-2 font-mono text-xs font-bold uppercase" style={{ background: "var(--panel)" }} whileTap={{ scale: 0.94 }}>
+          {/* <motion.button type="button" onClick={() => setResetKey((k) => k + 1)} className="hard-card-small focus-ring px-3 py-2 font-mono text-xs font-bold uppercase" style={{ background: "var(--panel)" }} whileTap={{ scale: 0.94 }}>
             Reset
-          </motion.button>
+          </motion.button> */}
+          <Button onClick={() => setResetKey((k) => k + 1)} background="var(--lime)" textColor={isDark ? `var(--paper)` : `var(--ink)`}>
+            Reset
+          </Button>
         </div>
 
         <div ref={zoneRef} className={`hard-card relative mt-6 h-72 z-0 w-full overflow-hidden sm:h-80 ${!isDark ? "bg-white" : "bg-(--paper)"}`}>
