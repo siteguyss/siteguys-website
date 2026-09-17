@@ -29,13 +29,13 @@ const HeroSection = () => {
   }
 
   return (
-    <section className="grid-surface px-4 py-16 sm:px-6 sm:py-24 lg:px-8 border-b-2 border-(--line)">
-      <div className="neon-orb absolute left-6 top-6 h-30 w-30 opacity-50  rounded-full" style={{ background: "var(--coral)" }} />
-      <div className="neon-orb absolute right-10 top-20 h-30 w-30 opacity-50" style={{ background: "var(--lavender)" }} />
-      <div className="neon-orb absolute bottom-10 left-[50%] h-25 w-25 opacity-50 rounded-full" style={{ background: "var(--teal)" }} />
+    <section className="relative isolate overflow-hidden border-b-2 border-(--line) px-4 py-16 grid-surface sm:px-6 sm:py-24 lg:px-8">
+      <div aria-hidden="true" className="pointer-events-none absolute left-6 top-6 h-30 w-30 rounded-full opacity-50 neon-orb" style={{ background: "var(--coral)" }} />
+      <div aria-hidden="true" className="pointer-events-none absolute right-10 top-20 h-30 w-30 opacity-50 neon-orb" style={{ background: "var(--lavender)" }} />
+      <div aria-hidden="true" className="pointer-events-none absolute bottom-10 left-[50%] h-25 w-25 rounded-full opacity-50 neon-orb" style={{ background: "var(--teal)" }} />
 
-      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
-        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }} className="">
+      <div className="relative z-10 mx-auto grid min-w-0 max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
+        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }} className="min-w-0">
           <SectionEyebrow>{hero.kicker}</SectionEyebrow>
           <h1 className="mt-4 font-chillax text-4xl font-extrabold leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl">
             {hero.title} <span className={`${isDark ? "text-(--lime)" : "text-(--lavender)"}`}>{hero.title2}</span>
@@ -59,7 +59,7 @@ const HeroSection = () => {
           </dl>
         </motion.div>
 
-        <motion.div onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} style={{ rotateX, rotateY, transformPerspective: 900 }} className="hard-card reactCard md:row-start-1  md:col-start-2 relative aspect-square w-full max-w-md justify-self-center rounded-none p-8">
+        <motion.div onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave} style={{ rotateX, rotateY, transformPerspective: 900 }} className="hard-card reactCard relative aspect-square w-full min-w-0 max-w-full justify-self-center rounded-none p-8 md:col-start-2 md:row-start-1 md:max-w-md">
           <p className="absolute bottom-3 left-8 right-8 font-synonym text-xs uppercase">Strategy · Design · Engineering</p>
         </motion.div>
       </div>

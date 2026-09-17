@@ -9,6 +9,7 @@ import { Testimonials } from "./components/Testimonials";
 import { FinalCTA } from "./components/FinalCta";
 import PackagesSection from "./components/PackagesSection";
 import { ContactFormular } from "./components/ContactFormular";
+import { FAQSection } from "./components/FaqSection";
 
 export default function Home() {
   return (
@@ -16,12 +17,11 @@ export default function Home() {
       <Nav />
       <main>
         <HeroSection />
-        <StickerPlayground />
-        <Services />
-        <PackagesSection />
         <Process />
-        <Testimonials />
+        <StickerPlayground />
+        <PackagesSection />
         <ContactFormular />
+        <FAQSection />
         <FinalCTA />
       </main>
       <Footer />

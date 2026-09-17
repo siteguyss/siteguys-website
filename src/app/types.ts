@@ -35,7 +35,6 @@ export interface PlanTier {
   supportIncludes: string[];
 }
 
-
 export interface ProjectInquiry {
   referenceId: string;
   clientName: string;
