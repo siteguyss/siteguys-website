@@ -20,7 +20,7 @@
 import type { ProjectInquiry, DispatchedEmail, PlanTier } from "../types";
 
 // TODO: confirm this is the correct inbox for studio-side alerts.
-const STUDIO_EMAIL = "info@siteguys.dk";
+const STUDIO_EMAIL = "infositeguys@gmail.com";
 
 function formatKr(n: number) {
   return `${n.toLocaleString("en-US")} kr.`;
