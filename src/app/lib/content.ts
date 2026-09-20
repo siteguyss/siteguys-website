@@ -148,7 +148,7 @@ export const finalCta = {
   title: "Let's build the site your business has already outgrown its current one for.",
   copy: "Tell us what's changing, what's stuck, and where you want to go. We'll reply with a clear next step.",
   primaryCta: { label: "Start a Project", href: "#contact" },
-  secondaryCta: { label: "See the Work", href: "mailto:info@siteguys" },
+  secondaryCta: { label: "See the Work", href: "mailto:infositeguys@gmail.com" },
 };
 
 export const footer = {
@@ -156,6 +156,6 @@ export const footer = {
   copy: "Design and development for small teams shipping real products. Remote-first, worldwide.",
   links: [
     { label: "+45 25941919", href: "tel:+4525941919" },
-    { label: "info@siteguys.dk", href: "mailto:info@siteguys.dk?subject=Project%20inquiry" },
+    { label: "infositeguys@gmail.com", href: "mailto:infositeguys@gmail.com?subject=Project%20inquiry" },
   ],
 };

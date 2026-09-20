@@ -80,7 +80,7 @@ export function Nav() {
       <nav className="relative mx-auto flex max-w-7xl items-center justify-between gap-10 px-4 py-2 sm:px-6 lg:px-8">
         <a href="#" className="tracking-tight hover:scale-105 transition-hover duration-200 ">
           <div
-            className="relative h-8 w-fit my-auto"
+            className="relative my-auto flex h-8 w-fit items-center"
             onMouseEnter={() => {
               handleHover();
               setIsHovering(true);
@@ -88,10 +88,10 @@ export function Nav() {
             onMouseLeave={() => setIsHovering(false)}
           >
             {/* Normal logo */}
-            <img src={isDark ? nav.logo2 : nav.logo} alt="SiteGuys" className={`h-6 w-auto transition-opacity duration-200 ${isHovering ? "opacity-0" : "opacity-100"}`} />
+            <img src={isDark ? nav.logo2 : nav.logo} alt="SiteGuys" className={`block h-6 w-auto transition-opacity duration-200 ${isHovering ? "opacity-0" : "opacity-100"}`} />
 
             {/* Hover logo */}
-            <img src={hoverLogos[hoverColor]} alt="SiteGuys" className={`absolute inset-0 h-6 w-auto transition-opacity duration-200 ${isHovering ? "opacity-100" : "opacity-0"}`} />
+            <img src={hoverLogos[hoverColor]} alt="SiteGuys" className={`absolute inset-y-1/2 h-6 w-auto -translate-y-1/2 transition-opacity duration-200 ${isHovering ? "opacity-100" : "opacity-0"}`} />
           </div>
         </a>
 
@@ -117,7 +117,7 @@ export function Nav() {
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="hidden grid-cols-1 *:row-end-1 items-center gap-3 overflow-hidden sm:grid">
+          <div className="hidden shrink-0 items-center gap-3 sm:flex">
             <Button onClick={toggleTheme} background="var(--panel)">
               {isDark ? "Dark" : "Light"}
             </Button>
