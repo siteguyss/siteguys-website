@@ -6,6 +6,8 @@ import localFont from "next/font/local";
 import { ThemeProvider } from "./components/ThemeProvider";
 import "./globals.css";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://siteguys.co";
+
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -17,7 +19,6 @@ import "./globals.css";
 //   variable: "--font-syne",
 //   display: "swap",
 // });
-
 
 // const spaceMono = Space_Mono({
 //   subsets: ["latin"],
@@ -31,11 +32,36 @@ import "./globals.css";
 //   subsets: ["latin"],
 // });
 
-// export const metadata: Metadata = {
-//   title: "Site Guys.Co - Web design Studio",
-//   description: "Small studio, sharp work. Strategy, design, and engineering in one team.",
-// };
-
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "SiteGuys | Web design and development studio",
+    template: "%s | SiteGuys",
+  },
+  description: "SiteGuys designs and builds fast, accessible websites for ambitious businesses and small teams.",
+  applicationName: "SiteGuys",
+  keywords: ["web design", "web development", "Next.js websites", "web design studio", "Denmark"],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "SiteGuys",
+    title: "SiteGuys | Web design and development studio",
+    description: "Fast, clear, conversion-focused websites for ambitious businesses and small teams.",
+    locale: "en_DK",
+  },
+  twitter: {
+    card: "summary",
+    title: "SiteGuys | Web design and development studio",
+    description: "Fast, clear, conversion-focused websites for ambitious businesses and small teams.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 const synonym = localFont({
   src: [
@@ -113,7 +139,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${synonym.variable} ${chillax.variable}`}>
-      <body >
+      <body>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

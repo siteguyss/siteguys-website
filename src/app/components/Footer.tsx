@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { footer } from "../lib/content";
 import { nav } from "../lib/content";
 import { useTheme } from "./ThemeProvider";
@@ -23,7 +24,7 @@ export function Footer() {
     <footer className="border-t-2" style={{ borderColor: "var(--line)" }}>
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 py-8 sm:px-6 md:flex-row md:items-end md:justify-between lg:px-8">
         <div>
-          <img src={isDark ? nav.logo2 : nav.logo} alt="SiteGuys" className="h-8 w-auto" />
+          <Image src={isDark ? nav.logo2 : nav.logo} alt="SiteGuys" width={170} height={32} className="h-8 w-auto" />
           <p className="mt-2 max-w-lg text-sm leading-relaxed text-muted">{footer.copy}</p>
         </div>
         <div className="flex flex-wrap items-center gap-5">

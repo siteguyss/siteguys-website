@@ -14,10 +14,12 @@ import { AccordionItem } from "./utilityComps/AccordionItem";
 
 export function FAQSection() {
   return (
-    <div id="faq" className="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+    <section id="faq" aria-labelledby="faq-heading" className="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
       <div className="mx-auto max-w-3xl">
         <SectionEyebrow>05/ FAQ</SectionEyebrow>
-        <h2 className="my-4 text-3xl font-extrabold tracking-tight sm:text-4xl">Contract & process, answered.</h2>
+        <h2 id="faq-heading" className="my-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+          Contract & process, answered.
+        </h2>
 
         <div className="mt-8 divide-y-2 divide-line border-2 border-line bg-panel hard-card">
           {contraqt_faq.map((item, i) => (
@@ -25,6 +27,6 @@ export function FAQSection() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

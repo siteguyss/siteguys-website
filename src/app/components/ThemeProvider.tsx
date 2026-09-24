@@ -11,10 +11,20 @@ const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [isDark, setIsDark] = useState(false);
+  const [hasLoadedTheme, setHasLoadedTheme] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("siteguys-theme");
+    setIsDark(savedTheme === "dark");
+    setHasLoadedTheme(true);
+  }, []);
 
   useEffect(() => {
     document.documentElement.classList.toggle("theme-dark", isDark);
-  }, [isDark]);
+    if (hasLoadedTheme) {
+      window.localStorage.setItem("siteguys-theme", isDark ? "dark" : "light");
+    }
+  }, [hasLoadedTheme, isDark]);
 
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme: () => setIsDark((prev) => !prev) }}>

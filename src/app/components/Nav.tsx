@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
 import { nav } from "../lib/content";
 import { Button } from "./utilityComps/Button";
@@ -88,10 +89,10 @@ export function Nav() {
             onMouseLeave={() => setIsHovering(false)}
           >
             {/* Normal logo */}
-            <img src={isDark ? nav.logo2 : nav.logo} alt="SiteGuys" className={`block h-6 w-auto transition-opacity duration-200 ${isHovering ? "opacity-0" : "opacity-100"}`} />
+            <Image src={isDark ? nav.logo2 : nav.logo} alt="SiteGuys" width={170} height={32} priority className={`block h-6 w-auto transition-opacity duration-200 ${isHovering ? "opacity-0" : "opacity-100"}`} />
 
             {/* Hover logo */}
-            <img src={hoverLogos[hoverColor]} alt="SiteGuys" className={`absolute inset-y-1/2 h-6 w-auto -translate-y-1/2 transition-opacity duration-200 ${isHovering ? "opacity-100" : "opacity-0"}`} />
+            <Image src={hoverLogos[hoverColor]} alt="SiteGuys" width={170} height={32} className={`absolute inset-y-1/2 h-6 w-auto -translate-y-1/2 transition-opacity duration-200 ${isHovering ? "opacity-100" : "opacity-0"}`} />
           </div>
         </a>
 
